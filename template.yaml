@@ -4,18 +4,18 @@ Globals:
   Function:
     Timeout: 20
 Resources:
-  SamFirstEndpointkv7a2Function:
+  SamFirstEndpointkv7b3Function:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: SamFirstEndpointkv7a2/hello-world/
+      CodeUri: SamFirstEndpointkv7b3/hello-world/
       Runtime: nodejs14.x
       Handler: app.lambdaHandler
-      Description: SamFirstEndpointkv7a2
+      Description: SamFirstEndpointkv7b3
       Events:
-          SamFirstEndpointkv7a2:
+          SamFirstEndpointkv7b3:
              Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
              Properties:
-                Path: /SamFirstEndpointkv7a2
+                Path: /SamFirstEndpointkv7b3
                 Method: get
     Metadata: # Manage esbuild properties
       BuildMethod: esbuild
@@ -31,10 +31,10 @@ Outputs:
 # https://github.com/awslabs/serverless-application-model/blob/master/docs/internals/generated_resources.rst#api
   SamFirstEndpointkv7a2Api:
     Description: "API Gateway endpoint URL for Prod stage for Hello World function"
-    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/SamFirstEndpointkv7a2/"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/SamFirstEndpointkv7b3/"
   SamFirstEndpointkv7a2Function:
     Description: "Hello World Lambda Function ARN"
-    Value: !GetAtt SamFirstEndpointkv7a2Function.Arn
+    Value: !GetAtt SamFirstEndpointkv7b3Function.Arn
   SamFirstEndpointkv7a2FunctionIamRole:
     Description: "Implicit IAM Role created for Hello World function"
-    Value: !GetAtt SamFirstEndpointkv7a2FunctionRole.Arn
+    Value: !GetAtt SamFirstEndpointkv7b3FunctionRole.Arn
